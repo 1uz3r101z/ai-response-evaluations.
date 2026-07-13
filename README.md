@@ -15,9 +15,4 @@ A public portfolio of structured, human-written evaluations of AI-generated resp
 - [`evaluations/`](evaluations/) — one file per evaluation, numbered (e.g., `007-unit-conversion.md`)
 - [`evaluations/TEMPLATE.md`](evaluations/TEMPLATE.md) — the structure every evaluation follows
 
-## Progress log
-
-| # | Prompt category | Model tested | Verdict | Link |
-|---|----------------|--------------|---------|------|
-| — | *(entries added as completed)* | | | |
 
