@@ -12,7 +12,7 @@ A public portfolio of structured, human-written evaluations of AI-generated resp
 
 - [`rubric.md`](rubric.md) — the five dimensions I score and what each score means
 - [`prompts.md`](prompts.md) — the prompt bank, organized by category
-- [`evaluations/`](evaluations/) — one file per evaluation, numbered (e.g., `007-unit-conversion.md`)
+- [`evaluations/`](evaluations/) — one file per evaluation, numbered (e.g., `PROMPT #X.md`)
 - [`evaluations/TEMPLATE.md`](evaluations/TEMPLATE.md) — the structure every evaluation follows
 
 
