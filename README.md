@@ -6,7 +6,7 @@ A public portfolio of structured, human-written evaluations of AI-generated resp
 
 **Why it exists:** AI evaluator, trainer, and annotation roles are built on one skill — carefully reviewing AI output against guidelines and catching what's wrong. This repo is a work sample of that skill.
 
-**Honesty note:** The repo structure, rubric template, and prompt list were scaffolded with AI assistance (consistent with my AI-assisted workflow). Every evaluation in the `evaluations/` folder is written entirely by me — no AI is used to generate ratings, error analysis, or commentary. That's the point.
+**Honesty note:** The repo structure, rubric template, and prompt list were scaffolded with AI assistance (consistent with my AI-assisted workflow). Every evaluation in the [`evaluations/`](evaluations/) folder is written entirely by me — no AI is used to generate ratings, error analysis, or commentary. That's the point.
 
 ## How to read this repo
 
