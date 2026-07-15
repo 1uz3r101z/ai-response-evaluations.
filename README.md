@@ -2,7 +2,7 @@
 
 A public portfolio of structured, human-written evaluations of AI-generated responses.
 
-**What this is:** I take prompts from [`prompts.md`](prompts.md), run them through AI assistants (Claude, ChatGPT), and write a structured evaluation of each response using the rubric in [`rubric.md`](rubric.md). Every evaluation identifies specific errors, rates the response across five dimensions, and explains what a better response would do.
+**What this is:** I take prompts from [`prompts.md`](prompts.md), run them through AI assistants (Claude, ChatGPT), and write a structured evaluation of each response using the rubric in [`rubric.md`](rubric.md). Every evaluation identifies specific errors, rates the response across four dimensions, and explains what a better response would do.
 
 **Why it exists:** AI evaluator, trainer, and annotation roles are built on one skill — carefully reviewing AI output against guidelines and catching what's wrong. This repo is a work sample of that skill.
 
