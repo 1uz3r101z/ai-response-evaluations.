@@ -10,9 +10,10 @@ A public portfolio of structured, human-written evaluations of AI-generated resp
 
 ## How to read this repo
 
-- [`rubric.md`](rubric.md) — the five dimensions I score and what each score means
-- [`prompts.md`](prompts.md) — the prompt bank, organized by category
-- [`evaluations/`](evaluations/) — one file per evaluation, numbered (e.g., `PROMPT #X.md`)
-- [`evaluations/']_(TEMPLATE.md`) — the structure every evaluation follows
+* [`rubric.md`](rubric.md) — Defines the five evaluation dimensions and the criteria for each score.
+* [`prompts.md`](prompts.md) — Contains the prompt bank, organized by category.
+* [`evaluations/`](evaluations/) — Stores individual evaluation files, numbered using the format `PROMPT #X.md`.
+* [`TEMPLATE.md`](TEMPLATE.md) — Provides the standard structure used for every evaluation.
+
 
 
