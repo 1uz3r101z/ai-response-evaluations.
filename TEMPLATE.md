@@ -1,4 +1,4 @@
-# Evaluation NNN — [short prompt description]
+# Evaluation 
 
 **Prompt #:** (from prompts.md)
 **Category:** (A–G)
