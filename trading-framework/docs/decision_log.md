@@ -24,7 +24,7 @@ or risk decision gets an entry. Status values: `proposed` → `approved` /
 ## ADR-0002 — Relocate project out of the public portfolio repository
 
 - **Date:** 2026-07-22
-- **Status:** **proposed — owner decision required**
+- **Status:** **approved** (owner, 2026-07-22 — chose "new private repo")
 - **Context:** Phase 0 scaffolding was requested on a branch of
   `ai-response-evaluations`, which is a *public* portfolio of AI-response
   evaluations. The project's security policy requires a private repository,
@@ -46,7 +46,7 @@ or risk decision gets an entry. Status values: `proposed` → `approved` /
 ## ADR-0003 — Primary implementation language
 
 - **Date:** 2026-07-22
-- **Status:** proposed — owner decision required (Phase 0 interview)
+- **Status:** **approved** (owner, 2026-07-22 — chose Python)
 - **Context:** The project brief mentions reading credentials via
   `process.env` (a Node.js idiom), but also lists "preferred language" as an
   interview question. The quantitative-finance ecosystem (backtesting,
@@ -59,3 +59,25 @@ or risk decision gets an entry. Status values: `proposed` → `approved` /
 - **Consequences:** Determines toolchain in Phase 1 architecture. Secrets are
   read from environment variables in either language (`os.environ` /
   `process.env`) — the security model is identical.
+
+## ADR-0004 — Market sequencing: US equities/ETFs first, futures deferred
+
+- **Date:** 2026-07-22
+- **Status:** proposed — owner decision required
+- **Context:** The owner selected both US equities/ETFs and futures as target
+  markets, and described themselves as new to both trading and software
+  engineering. Futures carry embedded leverage, margin calls, contract
+  rollover mechanics, and per-contract minimum sizes that make small
+  mistakes expensive. Equities/ETFs traded cash-only (no margin) have a
+  hard floor on worst-case loss and the best paper-trading APIs.
+- **Decision (recommended):** Build and validate the entire framework —
+  strategy, backtesting, risk engine, paper trading — on **US equities/ETFs
+  only** first. Treat futures as a later expansion phase with its own
+  strategy spec, backtest, margin-aware risk-engine extension, and security
+  review. The architecture (Phase 1) will keep the instrument model general
+  so futures support is an extension, not a rewrite.
+- **Alternatives considered:** Supporting both from day one — rejected: it
+  roughly doubles Phase 2–5 scope and puts a leveraged instrument in front
+  of a first-time trader before the risk engine has any operating history.
+- **Consequences:** Futures ambition is preserved in the architecture but
+  gated behind demonstrated success in the safer market.
