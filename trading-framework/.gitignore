@@ -1,0 +1,46 @@
+# ── Secrets — never committed, no exceptions ─────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# ── Private / local data ─────────────────────────────────────────────
+backups/local/
+data/private/
+data/raw/
+*.db
+*.sqlite
+*.sqlite3
+
+# ── Logs (may contain sensitive operational detail) ──────────────────
+logs/
+*.log
+
+# ── Python ───────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+.coverage
+htmlcov/
+
+# ── Node (in case a TS/JS component is chosen later) ─────────────────
+node_modules/
+*.tsbuildinfo
+
+# ── OS / editor noise ────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
