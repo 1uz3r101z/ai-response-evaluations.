@@ -81,3 +81,23 @@ or risk decision gets an entry. Status values: `proposed` → `approved` /
   of a first-time trader before the risk engine has any operating history.
 - **Consequences:** Futures ambition is preserved in the architecture but
   gated behind demonstrated success in the safer market.
+
+## ADR-0005 — Paper-trading broker: Alpaca
+
+- **Date:** 2026-07-22
+- **Status:** **approved** (owner, 2026-07-22)
+- **Context:** First market is US equities/ETFs (per ADR-0004 recommendation)
+  on a swing timeframe. Requirements: first-class paper-trading API, separate
+  paper/live credentials by design, commission-free equities, maintained
+  Python SDK, and no requirement to run a local gateway process.
+- **Decision:** Target Alpaca for Phase 4 paper-trading integration.
+  Interactive Brokers was considered (broader coverage incl. futures for a
+  later phase) but rejected for the first iteration due to API/operational
+  complexity (persistent TWS/Gateway) disproportionate to a learning-first
+  project. Nothing about Alpaca's API is assumed: capabilities, permissions,
+  data entitlements, and rate limits are verified against live documentation
+  in Phase 4 and recorded in connection_report.md.
+- **Consequences:** Phase 4 uses Alpaca's paper environment exclusively.
+  Credential variables (paper only, trading-restricted) are defined in the
+  security-design phase. A futures-capable broker becomes a separate ADR
+  if/when ADR-0004's expansion phase is reached.
