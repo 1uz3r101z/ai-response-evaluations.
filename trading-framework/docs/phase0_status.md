@@ -12,20 +12,25 @@ Updated: 2026-07-22
   (proposed, awaiting explicit owner confirmation), ADR-0005 Alpaca
   (approved).
 
+## Update 2026-07-22 (later)
+- Owner created the private repository and approved migration.
+- ADR-0004 approved (equities/ETFs first). ADR-0006 added: daily loss 1.5%
+  and 10% max drawdown explicitly approved; remaining limits are standing
+  defaults pending Constitution v1.0 sign-off.
+- Owner supplied 19 absolute prohibitions → Bot Constitution v0.2,
+  Article VII (verbatim).
+- Migration is blocked only on session repo access: the add-repo call
+  requires an interactive approval that was not granted this turn. Migration
+  and branch cleanup happen as soon as access is approved.
+
 ## Blocked on owner
-1. **Create the private repository** (the session's GitHub integration
-   cannot create repos):
-   - GitHub → New repository → name: `quant-trading-framework`
-   - Visibility: **Private** · Initialize: empty (no README)
-   - Then grant the Claude GitHub integration access to it, and in the next
-     session ask Claude to migrate `trading-framework/` there. After
-     migration, delete this directory (and optionally this branch) from the
-     public portfolio repo.
-2. **Confirm or reject ADR-0004** (equities/ETFs first, futures deferred).
-3. **Answer the remaining free-form interview questions** (posed in chat):
-   psychology & behavioral self-assessment, absolute prohibitions, prior
-   market exposure, definitions of success and shutdown conditions, and
-   sign-off on the derived risk-limit proposal.
+1. **Approve session access to the private repo** when the permission prompt
+   appears (or start a session directly on `quant-trading-framework` and ask
+   Claude to pull this branch's `trading-framework/` directory into it).
+2. **Approve Bot Constitution v0.2** as v1.0 (or request amendments).
+3. **Answer the last interview items** (in chat): reaction to a 10% weekly
+   drop in an open position; definition of success at 6 months; conditions
+   for shutting the project down.
 
 ## Exit criteria for Phase 0
 - trader_profile.md fully completed in the private repo.

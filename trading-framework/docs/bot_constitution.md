@@ -1,4 +1,4 @@
-# Bot Constitution — DRAFT v0.1 (pending owner approval)
+# Bot Constitution — DRAFT v0.2 (pending owner approval)
 
 **Status:** DRAFT. These rules take effect as immutable once the owner
 approves this document at the end of Phase 0. After approval, amendments
@@ -77,3 +77,40 @@ the bot, the AI assistant, and configuration files cannot change them.
     consecutive losses, error rates, disconnects) trigger it automatically.
 20. Critical security alerts (credential anomalies, unexpected permissions,
     live-account detection in paper mode, backup failures) pause trading.
+
+## Article VII — Owner prohibitions (verbatim, 2026-07-22)
+
+The owner supplied the following absolute prohibitions. Where they overlap
+with Articles I–VI, the redundancy is intentional — both formulations bind.
+
+The bot must never:
+
+21. place a trade without passing all risk checks.
+22. risk more than the configured maximum position size.
+23. expose or log API keys, passwords, or secrets.
+24. trade outside approved markets or instruments.
+25. use leverage above the configured limit (v1 configured limit: none —
+    cash only, per ADR-0006).
+26. average down on losing positions unless explicitly allowed by the
+    approved strategy specification.
+27. remove or bypass stop-loss protection.
+28. execute trades based on missing, stale, or corrupted market data.
+29. continue trading if critical errors are detected.
+30. ignore exchange/broker error messages or rejected orders — every
+    rejection is logged, reconciled, and surfaced.
+31. modify historical trading records or logs (ledger and audit logs are
+    append-only).
+32. make up market data, prices, or performance metrics.
+33. overfit strategies using future data — backtests must be free of
+    look-ahead bias, and Phase 3 methodology must demonstrate this
+    (point-in-time data, walk-forward, out-of-sample).
+34. violate exchange rules or applicable laws.
+35. override human emergency stop commands — the kill switch always wins,
+    immediately, over any automated state.
+36. exceed daily loss limits.
+37. place duplicate orders unintentionally (idempotency keys +
+    open-order reconciliation, per Article I).
+38. trade when required services or data feeds are unavailable.
+39. claim profits that have not been realized — reporting must separate
+    realized and unrealized P&L.
+40. hide losses, errors, or failed trades.

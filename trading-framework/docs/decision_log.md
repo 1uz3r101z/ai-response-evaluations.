@@ -63,7 +63,7 @@ or risk decision gets an entry. Status values: `proposed` → `approved` /
 ## ADR-0004 — Market sequencing: US equities/ETFs first, futures deferred
 
 - **Date:** 2026-07-22
-- **Status:** proposed — owner decision required
+- **Status:** **approved** (owner, 2026-07-22 — confirmed equities first)
 - **Context:** The owner selected both US equities/ETFs and futures as target
   markets, and described themselves as new to both trading and software
   engineering. Futures carry embedded leverage, margin calls, contract
@@ -101,3 +101,24 @@ or risk decision gets an entry. Status values: `proposed` → `approved` /
   Credential variables (paper only, trading-restricted) are defined in the
   security-design phase. A futures-capable broker becomes a separate ADR
   if/when ADR-0004's expansion phase is reached.
+
+## ADR-0006 — Initial risk-limit defaults (v1, equities/ETFs, no margin)
+
+- **Date:** 2026-07-22
+- **Status:** partially approved — daily-loss limit and max-drawdown
+  explicitly approved by owner; remaining values are standing defaults that
+  become binding at Bot Constitution v1.0 sign-off unless the owner amends.
+- **Limits:**
+  | Limit | Value | Owner status |
+  |---|---|---|
+  | Max daily loss | **1.5%** of account | **approved 2026-07-22** |
+  | Max account drawdown (kill switch) | **10%** peak-to-trough | **approved 2026-07-22** |
+  | Max risk per trade | 0.5–1% of account | default |
+  | Max weekly loss | 3% of account | default |
+  | Max open positions | 5 | default |
+  | Leverage | none (cash only) | default |
+  | Shorting | not permitted in v1 | default |
+- **Notes:** Breaching the daily or weekly loss limit halts trading for the
+  remainder of that period. Breaching max drawdown triggers the kill switch
+  and requires a documented owner review before restart. Limits may be
+  tightened by configuration; loosening requires an ADR with owner approval.
